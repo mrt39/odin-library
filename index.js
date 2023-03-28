@@ -1,27 +1,22 @@
 //array of book objects
 let myLibrary = [];
 
-//Constructor for new books
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.info = function() {
-    if (this.read === true){
-      return this.title + " by " + this.author + ", " + this.pages + " pages, read this book." 
+
+//class constructor for new books
+class Book{
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
     }
-    else {
-      return this.title + " by " + this.author + ", " + this.pages + " pages, not read yet." 
+  toggleRead() {
+    this.read = !this.read;
     }
   }
-}
+  
 
-//add constructer prototype function for toggling "read" property on the book object
-//this is a basic boolean toggle, https://stackoverflow.com/questions/11604409/how-to-toggle-a-boolean
-Book.prototype.toggleRead = function() {
-  this.read = !this.read;
-}
+
 
 
 //NEW BOOK button displays the form when clicked
